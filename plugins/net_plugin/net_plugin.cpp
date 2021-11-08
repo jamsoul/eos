@@ -1198,6 +1198,10 @@ namespace eosio {
 
    // called from connection strand
    void connection::_close( connection* self, bool reconnect, bool shutdown ) {
+      if (!self->socket_open){
+         peer_ilog(self, "attempt to close connection while it is already closed. skipping");
+      }
+      
       self->socket_open = false;
       self->set_participating(false);
       boost::system::error_code ec;
