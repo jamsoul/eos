@@ -3,6 +3,7 @@
 #include <eosio/chain/types.hpp>
 #include <eosio/chain/webassembly/common.hpp>
 #include <fc/crypto/sha1.hpp>
+#include <fc/crypto/sha3.hpp>
 #include <boost/hana/string.hpp>
 
 namespace eosio { namespace chain {
@@ -442,6 +443,15 @@ namespace webassembly {
           * @param[out] hash_val - the resulting digest.
          */
          void sha256(legacy_span<const char> data, legacy_ptr<fc::sha256> hash_val) const;
+
+         /**
+          * Hashes data using SHA3.
+          *
+          * @ingroup crypto
+          * @param data - a span containing the data.
+          * @param[out] hash_val - the resulting digest.
+         */
+         void sha3(legacy_span<const char> data, legacy_ptr<fc::sha3> hash_val) const;
 
          /**
           * Hashes data using SHA1.

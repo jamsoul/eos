@@ -208,6 +208,18 @@ Enables usage of key-value database intrinsics.
 */
             {}
          } )
+         (  builtin_protocol_feature_t::sha3, builtin_protocol_feature_spec{
+            "SHA3",
+            fc::variant("6752899cc72a5fa3ae4c0c9cc46aef764929ef16367f28b627814cfb3250bbc4").as<digest_type>(),
+            // SHA256 hash of the raw message below within the comment delimiters (do not modify message below).
+/*
+Builtin protocol feature: SHA3
+
+Enables usage of SHA3 function.
+*/
+
+            {}
+         } )
          (  builtin_protocol_feature_t::configurable_wasm_limits, builtin_protocol_feature_spec{
             "CONFIGURABLE_WASM_LIMITS",
             fc::variant("67f5f1e92cbf6f7276e7b3fc8c2ad23e63448e657641a1e5de69bccd114542d6").as<digest_type>(),

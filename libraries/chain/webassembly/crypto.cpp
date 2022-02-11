@@ -93,6 +93,10 @@ namespace eosio { namespace chain { namespace webassembly {
       *hash_val = context.trx_context.hash_with_checktime<fc::sha256>( data.data(), data.size() );
    }
 
+   void interface::sha3(legacy_span<const char> data, legacy_ptr<fc::sha3> hash_val) const {
+      *hash_val = context.trx_context.hash_with_checktime<fc::sha3>( data.data(), data.size() );
+   }
+
    void interface::sha512(legacy_span<const char> data, legacy_ptr<fc::sha512> hash_val) const {
       *hash_val = context.trx_context.hash_with_checktime<fc::sha512>( data.data(), data.size() );
    }
